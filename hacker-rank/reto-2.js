@@ -22,16 +22,16 @@ Sum everything except 5, the sum is 1 + 2 + 3 + 4 = 10.
 */
 
 const main = () => {
-  const data = [1, 2, 3, 4, 5];
+  const data = [1,2,3,4,5];
   const sumTotal = [] ;
   
-  data.forEach((item, index) => {
+  for (let i = 0 ; i < data.length; i++) {
     const copyData = [...data];
-    copyData.splice(index, 1);
-    const result = copyData.reduce((acc, el) => acc + el, 0);
+    copyData.splice(i, 1);
+    const result = copyData.reduce((acc, el) => acc + el);
     sumTotal.push(result);
-  });
-
+  }
+  
   const min = Math.min(...sumTotal);
   const max = Math.max(...sumTotal);
   console.log(min, max)
