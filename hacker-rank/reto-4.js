@@ -7,20 +7,30 @@ Por cada multiplo de 5, que imprima "Buz" en lugar del numero
 Para numero que plutilos de 3 y 5 que imprima "FizzBuzz" en lugar del numero
 */
 
-const fizzBuz = (n) => {
+const main = (n) => {
   for (let i=1; i <= n; i++) {
-    let result = '';
-    
-    if (i % 3 === 0) {
-      result += 'Fizz'
-    }
-    
-    if (i % 5 === 0) {
-      result += 'Buzz'
-    }
-    
-    console.log(result || i);
+    console.log(`${i}: ${fizzBuz(i)}`);
   }
 }
 
-fizzBuz(15);
+const fizzBuz = (n) => {
+  if (n % 3 === 0 && n % 5 === 0) {
+    return 'fizzbuzz';
+  }
+
+  if (n % 3 === 0) {
+    return 'fizz';
+  }
+  
+  if (n % 5 === 0) {
+    return 'buzz';
+  }
+
+  return n;
+}
+
+main(15);
+
+module.exports = {
+  fizzBuz
+}
